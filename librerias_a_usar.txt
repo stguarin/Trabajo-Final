@@ -1,0 +1,4 @@
+pygame: libreria especializada principalmente en la creacion de videojuegos en 2D usando python dando mas acceso a manipulacion de ficheros audios y perifericos
+random: libreria para generar valores aeatorios o cambiar el orden de algunos elementos de forma aleatoria
+turtle: libreria principalmente para apartados graficos y movimiento con cordenadas, se usa pricipalemnte para dibujos y personalizacion de los mismos 
+math: libreria especializada en operaciones y signos matematicos (se pueden usar conficguraciones de angulos para las fisicas en el pong)
