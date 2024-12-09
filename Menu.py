@@ -12,7 +12,7 @@ single_player= tk.Button(text='multijugador',font=('8BIT WONDER',30),bg='#000000
 single_player.place(x=510,y=490)
 brick_Breaker= tk.Button(text='Brick Breacker',font=('8BIT WONDER',30),bg='#000000',fg='white',relief='raised')
 brick_Breaker.place(x=490,y=580)
-salir= tk.Button(text='Salir',font=('8BIT WONDER',30),bg='#000000',fg='white',relief='raised')
+salir= tk.Button(text='Salir',font=('8BIT WONDER',30),bg='#000000',fg='white',relief='raised',command=ventana.quit)
 salir.place(x=670,y=700)
 
-ventana.mainloop()
+ventana.mainloop()  
