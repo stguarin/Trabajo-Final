@@ -1,18 +1,47 @@
 import tkinter as tk
-ventana = tk.Tk()
-ventana.geometry('1600x900')
-ventana.attributes('-fullscreen',1)
-ventana.config(bg='black')
+from tkinter import font
 
-titulo = tk.Label(ventana,text='Pong',font=('8BIT WONDER',150),bg='#000000',fg='white')
-titulo.place(x=400,y=50)
-single_player= tk.Button(text='1 jugador',font=('8BIT WONDER',30),bg='#000000',fg='white',relief='raised')
-single_player.place(x=600,y=400)
-single_player= tk.Button(text='multijugador',font=('8BIT WONDER',30),bg='#000000',fg='white',relief='raised')
-single_player.place(x=510,y=490)
-brick_Breaker= tk.Button(text='Brick Breacker',font=('8BIT WONDER',30),bg='#000000',fg='white',relief='raised')
-brick_Breaker.place(x=490,y=580)
-salir= tk.Button(text='Salir',font=('8BIT WONDER',30),bg='#000000',fg='white',relief='raised',command=ventana.quit)
-salir.place(x=670,y=700)
+
+##crear una ventana principal
+ventana = tk.Tk()
+ventana.title("ventana principal")
+##ventana.geometry('1600x900')
+##definir tamaño de la ventana a tamaño completo
+ventana.attributes('-fullscreen',1)
+##definir el color del fondo de la ventana
+ventana.config(bg='black')
+#"definir la fuente para botones y titulo"
+fuentebotones=font.Font(family="Arcade Classic", size=30, weight="bold")
+fuentetitulo=font.Font(family="Arcade Classic", size=150, weight="bold")
+
+
+
+#funcion crear ventana 1 jugador
+def crear_ventana_1jugador():
+       
+    ventana_1jugador=tk.Toplevel(ventana)
+    ventana_1jugador.title("ventana 1 jugador")
+    ventana_1jugador.attributes('-fullscreen',1)
+    ventana_1jugador.config(bg='black')
+    
+    titulo1jugador=tk.Label(ventana_1jugador,text='1 Jugador',font=(fuentetitulo),bg='#000000',fg='white')
+    titulo1jugador.place(x=200,y=40)
+    boton_volver=tk.Button(ventana_1jugador,text='volver',font=(fuentebotones),bg='#000000',fg='white',relief='raised',command=ventana_1jugador.quit)
+    boton_volver.place(x=400,y=330)
+    titulo1jugador
+    boton_volver
+
+    
+
+titulo = tk.Label(ventana,text='Pong',font=(fuentetitulo),bg='#000000',fg='white')
+titulo.place(x=400,y=40)
+single_player= tk.Button(ventana,text='1 Jugador',font=fuentebotones,bg='#000000',fg='white',relief='raised',command=crear_ventana_1jugador)
+single_player.place(x=530,y=350)
+multi_player= tk.Button(text='Multijugador',font=(fuentebotones),bg='#000000',fg='white',relief='raised')
+multi_player.place(x=510,y=440)
+brick_Breaker= tk.Button(text='Brick Breacker',font=(fuentebotones),bg='#000000',fg='white',relief='raised')
+brick_Breaker.place(x=490,y=530)
+salir= tk.Button(text='Salir',font=(fuentebotones),bg='#000000',fg='white',relief='raised',command=ventana.quit)
+salir.place(x=600,y=620)
 
 ventana.mainloop()  
