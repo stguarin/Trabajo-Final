@@ -1,4 +1,5 @@
 import tkinter as tk
+import random
 from tkinter import font
 
 
@@ -49,7 +50,7 @@ def crear_ventana_multiplayer():
 
 
 
-    
+
 
 def crear_ventana_brick():
     ventana_brick=tk.Toplevel(ventana)
