@@ -1,4 +1,5 @@
 import tkinter as tk
+import random
 from tkinter import font
 
 
@@ -14,6 +15,8 @@ ventana.config(bg='black')
 fuentebotones=font.Font(family="Arcade Classic", size=30, weight="bold")
 fuentetitulo=font.Font(family="Arcade Classic", size=150, weight="bold")
 fuentebotonesventanas=font.Font(family="Arcade Classic", size=15, weight="bold")
+# Configuración inicial
+COLOR_LADRILLOS = ["red", "orange", "yellow", "green", "blue"]
 
 
 
@@ -49,22 +52,16 @@ def crear_ventana_multiplayer():
 
 
 
-    
+
 
 def crear_ventana_brick():
     ventana_brick=tk.Toplevel(ventana)
     ventana_brick.title("ventana multijugador")
     ventana_brick.attributes('-fullscreen',1)
     ventana_brick.config(bg='black')
-    
-    titulbrick=tk.Label(ventana_brick,text='multijugador',font=(fuentetitulo),bg='#000000',fg='white')
-    titulbrick.place(x=200,y=40)
     boton_volver=tk.Button(ventana_brick,text='volver',font=(fuentebotonesventanas),bg='#000000',fg='white',relief='raised',command=ventana_brick.destroy)
     boton_volver.place(x=1180,y=20)
-    titulbrick
     boton_volver 
-
-
 
 
 #ventana principal
