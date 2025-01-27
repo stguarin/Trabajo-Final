@@ -64,8 +64,46 @@ def crear_ventana_brick():
     ventana_brick.config(bg='black')
     titulobreak=tk.Label(ventana_brick,text='brick breaker',font=(fuentetitbrick),bg='#000000',fg='white')
     titulobreak.place(x=100,y=0)
+
+    def registrarse():
+                ventana_registro=tk.Toplevel(ventana_brick)
+                ventana_registro.attributes('-fullscreen',1)
+                ventana_registro.config(bg='black')
+                registrar= tk.Label(ventana_registro,text='registro',font=(fuentetitbrick),bg='#000000',fg='white')
+                registrar.place(x=300,y=0)
+                boton_volver=tk.Button(ventana_registro,text='volver',font=(fuentebotonesventanas),bg='#000000',fg='white',relief='raised',command=ventana_registro.destroy)
+                boton_volver.place(x=1180,y=20) 
+                usuario=tk.Label(ventana_registro,text='usuario',font=(fuenteusucontra),bg='#000000',fg='white')
+                usuario.place(x=500,y=200)
+                caja_texto_usuario = tk.Text(ventana_registro, height=1, width=40)
+                caja_texto_usuario.place(x=475,y=290)
+                contraseña=tk.Label(ventana_registro,text='contraseña',font=(fuenteusucontra),bg='#000000',fg='white')
+                contraseña.place(x=450,y=330)
+                caja_texto_contraseña = tk.Text(ventana_registro, height=1, width=40)
+                caja_texto_contraseña.place(x=475,y=425)
+                marcador=tk.Label(ventana_registro,text='marcador',font=(fuenteusucontra),bg='#000000',fg='white')
+                marcador.place(x=450,y=450)
+                caja_texto_marcador = tk.Text(ventana_registro, height=1, width=40)
+                caja_texto_marcador.place(x=475,y=550)
+                
+
+
+                def dataregist():
+                    texto_usuario=caja_texto_usuario.get("1.0", tk.END).strip()
+                    texto_contraseña=caja_texto_contraseña.get("1.0", tk.END).strip()
+                    texto_marcador=caja_texto_marcador.get("1.0", tk.END).strip()
+                    print(texto_marcador,texto_contraseña,texto_usuario)
+
+                    referencia= db.reference(f'jugadores/{texto_usuario}')
+                    referencia.set({'contraseña':texto_contraseña, 'marcador':texto_marcador})
+                    
+                        
+                        
+                      
+                boton_registro=tk.Button(ventana_registro,text='registrarse',font=(fuentebotones),bg='#000000',fg='white',relief='raised',command=dataregist)
+                boton_registro.place(x=500,y=600)
+
     def iniciar_sesion():
-    
         ventana_inicio=tk.Toplevel(ventana_brick)
         ventana_inicio.attributes('-fullscreen',1)
         ventana_inicio.config(bg='black')
@@ -73,7 +111,6 @@ def crear_ventana_brick():
         iniciar.place(x=200,y=100)
         boton_volver=tk.Button(ventana_inicio,text='volver',font=(fuentebotonesventanas),bg='#000000',fg='white',relief='raised',command=ventana_inicio.destroy)
         boton_volver.place(x=1180,y=20)
-        boton_volver 
         usuario=tk.Label(ventana_inicio,text='usuario',font=(fuenteusucontra),bg='#000000',fg='white')
         usuario.place(x=500,y=300)
         caja_texto_usuario = tk.Text(ventana_inicio, height=1, width=40)
@@ -82,12 +119,23 @@ def crear_ventana_brick():
         contraseña.place(x=450,y=430)
         caja_texto_contraseña = tk.Text(ventana_inicio, height=1, width=40)
         caja_texto_contraseña.place(x=475,y=525)
-        boton_sesion=tk.Button(ventana_inicio,text='iniciar sesion',font=(fuentebotones),bg='#000000',fg='white',relief='raised',)
+        boton_sesion=tk.Button(ventana_inicio,text='iniciar sesion',font=(fuentebotones),bg='#000000',fg='white',relief='raised')
         boton_sesion.place(x=500,y=550)
-        boton_volver 
+
+
+    
+
+
         
         
-    boton_registrar=tk.Button(ventana_brick,text='Registrar',font=(fuentebotones),bg='#000000',fg='white',relief='raised',command=iniciar_sesion)
+
+       
+        
+        
+        
+        
+        
+    boton_registrar=tk.Button(ventana_brick,text='Registrar',font=(fuentebotones),bg='#000000',fg='white',relief='raised',command=registrarse)
     boton_registrar.place(x=550,y=490)
     boton_iniciar=tk.Button(ventana_brick,text='Iniciar Sesión',font=(fuentebotones),bg='#000000',fg='white',relief='raised',command=iniciar_sesion)
     boton_iniciar.place(x=500,y=400)
